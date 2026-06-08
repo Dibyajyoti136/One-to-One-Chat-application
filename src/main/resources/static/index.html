@@ -1,73 +1,45 @@
 <!DOCTYPE html>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeonChat — Enter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
 
-    </section>
+  <div class="container">
+    <div class="logo">NEONCHAT</div>
+    <div class="tagline">Realtime · Encrypted · Alive</div>
 
-    <!-- CHAT PAGE -->
+    <div class="card" id="card">
+      <div class="card-label">Initialize Session</div>
+      <h2>Who are you?</h2>
+      <p class="sub">Enter your name to join the network and connect with others in real time.</p>
 
-    <section id="chatPage" hidden>
+      <div class="input-wrap">
+        <input type="text" id="nameInput" placeholder="Enter your name..." maxlength="20" autocomplete="off" autofocus />
+        <span class="cursor-hint">↵ ENTER</span>
+      </div>
+      <button class="btn" id="joinBtn">Connect to Network</button>
+      <div class="error-msg" id="errorMsg">⚡ Name cannot be empty</div>
+    </div>
+  </div>
 
-        <aside class="sidebar">
+  <div class="status-bar">
+    <div class="dot"></div>
+    Network Online — Open multiple tabs to chat
+  </div>
 
-            <div class="sidebar-header">
-                <h2>Contacts</h2>
-            </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 
-            <ul id="userList">
-
-                <li class="user">
-                    <span class="status"></span>
-                    Rahul
-                </li>
-
-                <li class="user">
-                    <span class="status"></span>
-                    Aman
-                </li>
-
-            </ul>
-
-        </aside>
-
-        <main class="chat-container">
-
-            <div class="chat-header">
-                <h2 id="chatTitle">
-                    Select a User
-                </h2>
-            </div>
-
-            <div id="messages">
-
-                <div class="message received">
-                    Hello 👋
-                </div>
-
-                <div class="message sent">
-                    Hi!
-                </div>
-
-            </div>
-
-            <div class="chat-input">
-
-                <input
-                    type="text"
-                    id="messageInput"
-                    placeholder="Type your message..."
-                >
-
-                <button id="sendBtn">
-                    Send
-                </button>
-
-            </div>
-
-        </main>
-
-    </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="app.js"></script>
-
 </body>
 </html>
