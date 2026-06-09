@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Document
 public class User {
-public String NickName;
+public String nickName;
 public String fullname;
 public Status status;
 }

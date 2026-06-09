@@ -1,45 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeonChat — Enter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="grid-bg"></div>
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
 
-  <div class="container">
-    <div class="logo">NEONCHAT</div>
-    <div class="tagline">Realtime · Encrypted · Alive</div>
+<!-- LOGIN PAGE -->
 
-    <div class="card" id="card">
-      <div class="card-label">Initialize Session</div>
-      <h2>Who are you?</h2>
-      <p class="sub">Enter your name to join the network and connect with others in real time.</p>
+<div id="loginPage">
 
-      <div class="input-wrap">
-        <input type="text" id="nameInput" placeholder="Enter your name..." maxlength="20" autocomplete="off" autofocus />
-        <span class="cursor-hint">↵ ENTER</span>
-      </div>
-      <button class="btn" id="joinBtn">Connect to Network</button>
-      <div class="error-msg" id="errorMsg">⚡ Name cannot be empty</div>
+    <div class="login-card">
+        <h1>Realtime Chat</h1>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+        >
+
+        <button id="joinBtn">
+            Join Chat
+        </button>
     </div>
-  </div>
 
-  <div class="status-bar">
-    <div class="dot"></div>
-    Network Online — Open multiple tabs to chat
-  </div>
+</div>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<!-- CHAT PAGE -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <script src="app.js"></script>
+<div id="chatPage">
+
+    <!-- CONTACTS -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-header">
+            Contacts
+        </div>
+
+        <ul id="contactList">
+
+            <li class="contact active" data-user="Rahul">
+                <span class="dot online"></span>
+                Rahul
+            </li>
+
+            <li class="contact" data-user="Priya">
+                <span class="dot online"></span>
+                Priya
+            </li>
+
+            <li class="contact" data-user="Amit">
+                <span class="dot offline"></span>
+                Amit
+            </li>
+
+            <li class="contact" data-user="Sneha">
+                <span class="dot online"></span>
+                Sneha
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- CHAT -->
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+            <h2 id="chatUser">Rahul</h2>
+        </div>
+
+        <div class="messages" id="messages">
+
+            <div class="message received">
+                Hello 👋
+            </div>
+
+            <div class="message sent">
+                Hi Rahul
+            </div>
+
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+            >
+
+            <button id="sendBtn">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
 </body>
 </html>

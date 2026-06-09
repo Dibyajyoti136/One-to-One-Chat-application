@@ -1,73 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeonChat</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Style.css">
-</head>
-<body>
-<div class="grid-bg"></div>
+<section id="chatPage" hidden>
 
-<div class="app" id="app">
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="logo-sm">⬡ NEONCHAT</div>
-      <div class="my-info">
-        <div class="avatar" id="myAvatar"></div>
-        <div>
-          <div class="my-name" id="myName">—</div>
-          <div class="my-status">● Online</div>
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <h2>Contacts</h2>
         </div>
-      </div>
-    </div>
 
-    <div class="contacts-label">
-      Contacts
-      <span class="online-count" id="onlineCount">0 online</span>
-    </div>
+        <ul id="userList"></ul>
 
-    <div class="contacts-list" id="contactsList">
-      <div class="no-contacts" id="noContacts">
-        <div class="icon">📡</div>
-        <div>No users online yet.<br/>Open another tab to connect.</div>
-      </div>
-    </div>
-  </div>
+    </aside>
 
-  <!-- Main area -->
-  <div class="main" id="main">
-    <div class="welcome-screen" id="welcomeScreen">
-      <div class="welcome-icon">💬</div>
-      <h3>Select a contact</h3>
-      <p>Choose someone from the sidebar to start chatting in real time.</p>
-    </div>
+    <main class="chat-container">
 
-    <div class="chat-screen" id="chatScreen" style="display:none;">
-      <div class="chat-header">
-        <div class="avatar" id="chatAvatar"></div>
-        <div class="ch-info">
-          <div class="chat-header .ch-name" id="chatName" style="font-family:'Orbitron',monospace;font-size:.95rem;font-weight:700;"></div>
-          <div class="ch-status" id="chatStatus">● Online</div>
+        <div class="chat-header">
+            <h3 id="chatUser">
+                Select User
+            </h3>
         </div>
-      </div>
-      <div class="messages" id="messages"></div>
-      <div class="chat-input-area">
-        <input type="text" id="msgInput" placeholder="Type a message…" maxlength="500" autocomplete="off" />
-        <button class="send-btn" id="sendBtn">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+        <div id="chatMessages">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <script src="app.js"></script>
-</body>
-</html>
+        </div>
+
+        <div class="message-box">
+
+            <input
+                id="messageInput"
+                type="text"
+                placeholder="Type message">
+
+            <button id="sendBtn">
+                Send
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
