@@ -54,7 +54,17 @@ async function onMessageReceive(){
 	let connectedUsers= await connectedUserResponse.json();
 	connectedUsers=connectedUsers.filter(user=>user.nickName !== username);
 	
-	
+	connectedUsers.forEach(user=>{
+	let li = document.createElement("li");
+	li.className = "contact";
+	li.dataset.user = user.Nickname;
+
+	li.innerHTML = `
+	    <span class="dot online"></span>
+	    Sneha
+	`;
+
+	contactList.appendChild(li);})
 	/* CONTACT CHANGE */
 
 	contacts.forEach(contact => {

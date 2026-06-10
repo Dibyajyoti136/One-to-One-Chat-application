@@ -41,6 +41,7 @@ public class WebConfig implements WebSocketMessageBrokerConfigurer {
 			.withSockJS();
 	}
 
+	// add config
 	@Override
 	public boolean configureMessageConverters(List<MessageConverter> messageConverters) {
 		// TODO Auto-generated method stub
